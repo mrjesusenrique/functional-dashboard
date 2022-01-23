@@ -11,12 +11,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { Link } from "react-router-dom";
-import s from "./Footer.module.scss";
+import styles from "./Footer.module.scss";
 
 const Footer = (props) => {
   return (
-    <footer className={cx(s.root, props.className)}>
-      <div className={s.container}>
+    <footer className={cx(styles.root, props.className)}>
+      <div className={styles.container}>
         <span>
           © {new Date().getFullYear()} &nbsp;
           <a
@@ -24,14 +24,14 @@ const Footer = (props) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Flatlogic LLC
-          </a>{" "}
+            Developed by Jesus Casañas
+          </a>
         </span>
-        <span className={s.spacer}>·</span>
+        <span className={styles.spacer}>·</span>
         <Link to="/app/tos">Terms of Service</Link>
-        <span className={s.spacer}>·</span>
+        <span className={styles.spacer}>·</span>
         <Link to="/app/privacy">Privacy Policy</Link>
-        <span className={s.spacer}>·</span>
+        <span className={styles.spacer}>·</span>
         <Link to="/app/not-found">Support</Link>
       </div>
     </footer>
