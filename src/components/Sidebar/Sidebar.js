@@ -1,25 +1,19 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {withRouter, Link} from 'react-router-dom';
-
-import Icon from '../Icon';
-import LinksGroup from './LinksGroup/LinksGroup';
-
-import s from './Sidebar.module.scss';
+import React from "react";
+import { connect } from "react-redux";
+import { withRouter, Link } from "react-router-dom";
+import Icon from "../Icon";
+import LinksGroup from "./LinksGroup/LinksGroup";
+import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => (
-  <nav className={s.root}>
-    <header className={s.logo}>
+  <nav className={styles.root}>
+    <header className={styles.logo}>
       <Link to="/app/main">
         <Icon glyph="logo" />
       </Link>
     </header>
-    <ul className={s.nav}>
-      <LinksGroup
-        header="Dashboard"
-        headerLink="/app/main"
-        glyph="dashboard"
-      />
+    <ul className={styles.nav}>
+      <LinksGroup header="Dashboard" headerLink="/app/main" glyph="dashboard" />
       <LinksGroup
         header="Typography"
         headerLink="/app/typography"
@@ -40,20 +34,20 @@ const Sidebar = () => (
         headerLink="/app/components"
         childrenLinks={[
           {
-            name: 'Buttons',
-            link: '/app/components/buttons',
+            name: "Buttons",
+            link: "/app/components/buttons",
           },
           {
-            name: 'Charts',
-            link: '/app/components/charts',
+            name: "Charts",
+            link: "/app/components/charts",
           },
           {
-            name: 'Icons',
-            link: '/app/components/icons',
+            name: "Icons",
+            link: "/app/components/icons",
           },
           {
-            name: 'Maps',
-            link: '/app/components/maps',
+            name: "Maps",
+            link: "/app/components/maps",
           },
         ]}
         glyph="components"
