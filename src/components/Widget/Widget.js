@@ -7,41 +7,38 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
-import cx from 'classnames';
-import PropTypes from 'prop-types';
+import React from "react";
+import cx from "classnames";
+import PropTypes from "prop-types";
+import styles from "./Widget.module.scss";
 
-import s from './Widget.module.scss';
-
-class Widget extends React.Component {
-  static propTypes = {
-    title: PropTypes.node,
-    className: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]),
-  };
-
-  static defaultProps = {
-    title: null,
-    className: '',
-    children: [],
-  };
-
-  render() {
-    return (
-      <section className={cx(s.widget, this.props.className)}>
-        {this.props.title &&
-        (typeof this.props.title === 'string' ? (
-          <h5 className={s.title}>{this.props.title}</h5>
+const Widget = (props) => {
+  return (
+    <section className={cx(styles.widget, props.className)}>
+      {props.title &&
+        (typeof props.title === "string" ? (
+          <h5 className={styles.title}>{props.title}</h5>
         ) : (
-          <header className={s.title}>{this.props.title}</header>
+          <header className={styles.title}>{props.title}</header>
         ))}
-        <div>{this.props.children}</div>
-      </section>
-    );
-  }
-}
+      <div>{props.children}</div>
+    </section>
+  );
+};
+
+Widget.propTypes = {
+  title: PropTypes.node,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
+
+Widget.defaultProps = {
+  title: null,
+  className: "",
+  children: [],
+};
 
 export default Widget;
