@@ -8,18 +8,15 @@
  */
 
 import React from 'react';
+import styles from './NotFound.module.scss';
 
-import s from './NotFound.module.scss';
-
-class NotFound extends React.Component {
-  render() {
-    return (
-      <div className={s.root}>
-        <h1 className={s.title}>404</h1>
-        <p>Sorry, the page you were trying to view does not exist.</p>
-      </div>
-    );
-  }
+const NotFound = () => {
+  return (
+    <div className={styles.root}>
+      <h1 className={styles.title}>404</h1>
+      <p>Sorry, the page you were trying to view does not exist.</p>
+    </div>
+  );
 }
 
 export default NotFound
